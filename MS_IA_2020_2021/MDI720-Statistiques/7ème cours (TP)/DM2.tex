@@ -1,0 +1,113 @@
+\documentclass[a4paper,11pt]{article}
+
+\usepackage{../../../../sty/examen}
+\usepackage{../../../../sty/shortcuts_js}
+\usepackage{enumitem}
+
+
+\newcommand{\titrecours}{numéro 1}
+\newcommand{\titretd}{MDI720}
+\newcommand{\auteur}{François Portier}
+\newcommand{\annee}{2020/2021}
+\newcommand{\ecole}{TELECOM ParisTech}% \titre{}
+\newcommand{\titre}{Devoir maison~}% \titre{}
+
+
+\begin{document}
+\sloppy
+\feuille{1}
+
+%Pour ce TP de test de la plate-forme ``Classgrade'' vous devez déposer un \textbf{\underline{unique}} fichier \textbf{\underline{anonymisé}} (votre nom ne doit apparaître nulle part y compris dans le nom du fichier lui-même) sous format \lstinline+ipynb+ sur le site \url{http://peergrade.enst.fr/}.
+
+Vous devez charger votre fichier sur eCampus, avant le dimanche 18/10/2020 23h59.
+%Entre le lundi 16/10/2017 et le dimanche 22/10/2017, 23h59, vous devrez noter trois copies qui vous seront assignées anonymement, en tenant compte du barème suivant pour chaque question:
+%  \begin{itemize}
+%    \item[$\bullet$] 0 (manquant/ non compris/ non fait/ insuffisant)
+%    \item[$\bullet$] 1 (passable/partiellement satisfaisant)
+%    \item[$\bullet$] 2 (bien)
+%  \end{itemize}
+%Ensuite, il faudra également remplir de la même manière les points de notation suivants:
+%% La note totale est sur \textbf{20} points répartis comme suit:
+%\begin{itemize}
+%  \item[$\bullet$] aspect global de présentation: qualité de rédaction, d'orthographe, d'aspect de présentation, graphes, titres, etc. (Question 21).
+%  \item[$\bullet$] aspect global du code: indentation, Style PEP8, lisibilité du code, commentaires adaptés (Question 22)
+%  \item[$\bullet$] Point particulier: absence de bug sur votre machine (Question 23)
+%\end{itemize}
+%Des commentaires pourront être ajoutés question par question si vous en sentez le besoin ou l'utilité pour aider la personne notée \`a s'améliorer, et de manière obligatoire si vous ne mettez pas 2/2 \`a une question.
+%Enfin, veillez \`a rester polis et courtois dans vos retours.
+
+% Les personnes qui n'auront pas rentré leurs notes avant la limite obtiendront également \textbf{\underline{zéro}}.
+
+% \noindent Retard: malus de \textbf{4} pts par tranche de 24h (sauf excuses validées par l'administration).
+\begin{center}
+\textbf{Rappel: aucun travail par mail accepté!}
+\end{center}
+
+\vspace{0.5cm}
+
+\hrule
+
+\vspace{0.3cm}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \section*{Rappels sur le modèle linéaire}
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% Nous considérons le modèle statistique suivant:
+% \begin{equation}
+% \label{eq:modeleLin}
+% \bfy=X\bftheta+\bfepsilon,
+% \end{equation}
+% o\`{u}
+% \begin{itemize}
+% \item $\bfy=(y_i)_{1\leq i\leq n}\in\bbR^n$ est un vecteur colonne $n\times1$,
+% \item $X=(X_{i,j})_{1\leq i\leq n,1\leq j\leq p}$ est une
+%   matrice $n\times p$,
+% \item $\bftheta=(\theta_i)_{1\leq i\leq p}\in\bbR^{p}$ est un
+%   vecteur colonne $p\times1$,
+% \item $\bfepsilon=(\varepsilon_i)_{1\leq i\leq n}\in\bbR^n$ un vecteur colonne $n\times1$ aléatoire.
+% \end{itemize}
+% % GAUSSIANITE?
+% % Par simplicité, on suppose de plus que le vecteur $\bfepsilon$ suit la distribution :
+% % $$
+% % \bfepsilon\sim \cN(0,\sigma^2I_n)\ .
+% % $$
+% On rappelle les notations suivantes:
+% \begin{itemize}\item
+% $\hat{\bftheta} \in \argmin_{\theta \in \bbR^p} \|\bfy -X\theta\|^2/2$ l'estimateur par moindres carrés de $\bftheta$  (pour rappel $\hat{\bftheta} = (X^\top X)^{-1}X^\top \bfy$ quand la matrice $(X^\top X)$ est inversible.
+
+% \item $\hat \bfy = X \hat\bftheta$, la prédiction sur les valeurs observées
+
+% \item $\bar x_n = n^{-1}\sum_{i=1}^n x_i$ et $\bar y_n = n^{-1}\sum_{i=1}^n y_i$, les moyennes empiriques
+% \item $\var_n(\bfx)$ et $\var_n(\bfy)$, les variances empiriques
+% \item Le vecteur $r=\bfy-\hat \bfy$ est appelé vecteur des résidus.
+% \item $\1_n=(1,\dots,1)^\top $ est le vecteur ``tout \`a un'' de taille $n\times 1$
+% % \item On note
+% %  $\textrm{SST} = || \bfy - \bar{y}_n\1_n||^2$, \quad% $\textrm{MST} = \textrm{SST}/(n-1)$
+% %  $\textrm{SSR} = || \widehat \bfy - \bar{y}_n\1_n||^2$ (parfois aussi appelé SSM), \quad% $\textrm{MSM} =
+% %  \textrm{SSM}/p$
+%  % $\textrm{RSS} = || \bfy - \widehat \bfy||^2$ (\textit{Residual Sum of Squares} en anglais).
+
+% % $\textrm{MSE} =  \textrm{SSE}/(n-p-1)$
+% %\item On rappelle que SST = SSM  + SSE.
+
+
+% % \item L'estimateur de la variance est $\hat\sigma^2 =\textrm{RSS}/(n-p-1)$.
+
+% \end{itemize}
+
+\input{../../../pool_exo/control_variates/control_variates}
+%\input{../../../pool_exo/mco_galton/mco_galton_fr}
+%\input{../../../pool_exo/auto-mpg/auto-mpg_fr}
+% \input{../pool_exo/test_gaussien}
+% \input{../pool_exo/IC_bootstrap}
+% \input{../pool_exo/greedy_stepwise}
+% \input{../pool_exo/greedy_math_corr}
+% \input{../pool_exo/greedy_math}
+
+
+% \bibliographystyle{apalike}
+% \bibliography{../../../../sty/references_all}
+
+\end{document}

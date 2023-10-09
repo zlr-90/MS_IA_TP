@@ -1,0 +1,81 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel} 
+\usepackage{a4}
+
+\title{TP1}
+
+
+\begin{document}
+
+\maketitle
+
+\section{Question 1}
+
+\[ \text{Biais~de~\hat{I}_n(f) :~}
+
+B = \mathbb{E}[\hat{I}_n(f)] - I(f)
+
+\text{On~a :~}
+B = \mathbb{E}[\hat{I}_n(f)] - I(f)
+
+\text{Or~}  \hat{I}n(f) = \frac{1}{n} \sum_{i=1}^n f(X_i) 
+
+\text{Donc ~} \mathbb{E}[\hat{I}n(f)] = \frac{1}{n} \sum_{i=1}^n \mathbb{E}[f(X_i)] = \mathbb{E}[f(X)] \text{~~(idd~et~linéarité~de~l'espérance)}
+
+\text{Finalement~} \mathbb{B} = \mathbb{E}[f(X)] - \mathbb{E}[f(X)] = 0
+
+\]
+
+\[ \text{Variance~de~\hat{I}_n(f) :~}
+
+\text{On~a :~}
+Var[\hat{I}_n(f)] = Var[\frac{1}{n} \sum_{i=1}^n f(X_i)]
+
+\text{Or~}  Var[\sum_{i=1}^n f(X_i)  \frac{1}{n}] = \frac{1}{n^2} Var[\sum_{i=1}^n f(X_i)] = \frac{1}{n^2} n Var[f(X_1)]
+
+\text{Finalement, ~} Var[\hat{I}_n(f)] = \frac{1}{n} Var[f(X_1)]
+
+\]
+
+\section{Question 4}
+
+\[ \text{Interval~de~confiance~IC~à~95~de~\hat{I}_n(f) :~}
+
+\text{On~pose :~}
+S_n = f(X_1) + ... + f(X_n)
+
+\text{On~a :~}
+\mathbb{E}[S_n] = n \mu\text{~~~}
+Var(S_n) = n \sigma^2\text{~~~}
+\mu = \mathbb{E}[f(X_1)]\text{~~~}
+\sigma^2 = Var[f(X_1)]
+
+\text{D'après le théorème centrale limite, on a :~}  \lim_{n \to +\infty} \mathbb{P}(Z_n \leq z) = \Phi(z)
+
+Z_n = \frac{I_n - \mu}{\frac{\sigma}{\sqrt{n}}}\sim N(0, 1)
+
+\text{Soit q la fonction quantile. Pour un intervalle de confiance à 0.95, on q(0.95) = 1.96 ~}
+
+\text{Finalement, on obtient~}\]  $ I(f) -  \frac{1.96 \sigma}{\sqrt{n}} \leq I_n(f) \leq I(f) +  \frac{1.96 \sigma}{\sqrt{n}}$
+
+\section{Question 5}
+
+\[ \text{Biais~de~\hat{I}_n(f, \beta)  :~}
+
+B = \mathbb{E}[\hat{I}_n(f) - \beta^T\bar{h}] - I(f) = \mathbb{E}[\hat{I}_n(f)] - I(f) - \mathbb{E}[\beta^T\bar{h}]
+
+\text{On~a~-d'après~la~question1-:~}
+\mathbb{E}[\hat{I}_n(f)] - I(f) = 0
+
+\text{Donc~}  B = \mathbb{E}[\hat{I}_n(f)] - I(f) - \mathbb{E}[\beta^T\bar{h}] = - \mathbb{E}[\beta^T\bar{h}]
+
+\mathbb{E}[\beta^T\bar{h}] = \sum_{i=1}^n \sum_{j=1}^m \beta_j \mathbb{E}[h_j(X_i)]
+
+\text{Or~} \mathbb{E}[h_j(X_i)] = 0 \text{~par~hypothèse~}
+
+\text{Finalement~} B = \mathbb{E}[\hat{I}_n(f) - \beta^T\bar{h}] - I(f) = 0
+
+\]
+
+\end{document}
